@@ -11,13 +11,10 @@ export class CreateTaskComponent implements OnInit {
   constructor(private taskService : TaskService) { }
 
   ngOnInit(): void {
-    this.getPublicIpData();
+    this.taskService.getPublicIP()
+    .subscribe(res => {
+      console.log("Public IP", res);
+    });
   }
 
-  getPublicIpData() {
-    this.taskService.getPublicIP()
-      .subscribe(res => {
-        console.log("Public IP", res);
-      })
-  }
 }
