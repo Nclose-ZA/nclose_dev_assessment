@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-create-task',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateTaskComponent implements OnInit {
 
-  constructor() { }
+  constructor(private taskService : TaskService) { }
 
   ngOnInit(): void {
+    this.getPublicIpData();
   }
 
+  getPublicIpData() {
+    this.taskService.getPublicIP()
+      .subscribe(res => {
+        console.log("Public IP", res);
+      })
+  }
 }
