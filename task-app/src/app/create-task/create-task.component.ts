@@ -12,10 +12,6 @@ import {MatSnackBar , MatSnackBarHorizontalPosition,
 })
 export class CreateTaskComponent implements OnInit {
   taskListForm!: FormGroup;
-  hideAddButton : boolean = true;
-  hideDeleteButton : boolean = false;
-  numOfFieldAdded : number = 0;
-  value : string = '';
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   constructor(private formbuilder: FormBuilder, 
