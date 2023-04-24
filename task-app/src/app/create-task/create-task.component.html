@@ -1,9 +1,24 @@
-<mat-card>
-        <h1>Tasks</h1>
-        <mat-form-field appearance="fill">
-            <mat-label>
-                <input matInput placeholder="Add New Task">
-            </mat-label>
-        </mat-form-field>
-        <button mat-raised-button color="primary">Clear tasks</button>
-</mat-card>
+<div class="container">
+   <div class="task-list">
+    <form [formGroup] = "taskListForm">
+        <div class="container" formArrayName="taskList">
+            <h1 class="taskFontSize">Tasks</h1>
+            <div class="row" *ngFor="let list of taskListArray.controls; let i = index;" [formGroupName]="i">
+                <div class="col-md-8 col-sm-8 mt2">
+                    <input type="text" formControlName="task" class="taskInput form-control" placeholder="add task....">
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <mat-icon  class="material-icons add" *ngIf="i == 0" (click)="addTaskGroup()" > add_circle </mat-icon>
+                    <mat-icon  class="delete" *ngIf="i > 0" (click)="deleteTaskList(i)">delete</mat-icon>
+                </div> 
+            </div> 
+            <div class="col-md-4 col-sm-4">
+                <div class="col mt-2">
+                    <button mat-raised-button class="btn" (click)="clearAllTask()">Clear tasks</button>
+                </div>
+            </div> 
+        </div>
+    </form>
+ 
+   </div>
+</div>

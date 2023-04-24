@@ -11,8 +11,8 @@ export class TaskService {
   constructor(private httpclient : HttpClient) {}
   baseUrl = environment.baseUrl; 
 
-
-  getPublicIP() {
+  //calling the public ip api
+  getIP() {
     return this.httpclient.get<any>(this.baseUrl)
     .pipe(map((res: any) => {
         return res;
