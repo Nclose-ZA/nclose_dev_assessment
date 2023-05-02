@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto; 
+    background-color:  #424242;
+    font-size: 18px;
+}
+.error.mat-snack-bar-container {
+    background-color: #EF4F16;
+    color: #FFFFFF;
+}
+.success.mat-snack-bar-container {
+    background-color:#3C730F;
+    color: #FFFFFF;
+}
+@media all and (max-width: 1440px) {
+    body { 
+        margin: 0; 
+        font-family: Roboto; 
+        background-color:  #424242;
+        font-size: 18px;
+    }
+    .error.mat-snack-bar-container {
+        background-color: #EF4F16;
+        color: #FFFFFF;
+    }
+    .success.mat-snack-bar-container {
+        background-color:#3C730F;
+        color: #FFFFFF;
+    }
+}
