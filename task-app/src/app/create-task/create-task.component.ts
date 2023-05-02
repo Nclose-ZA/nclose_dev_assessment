@@ -14,6 +14,7 @@ export class CreateTaskComponent implements OnInit {
   taskListForm!: FormGroup;
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
+  isTyping = false;
   constructor(private formbuilder: FormBuilder, 
               private taskService : TaskService, 
               private toastr: ToastrService,
@@ -26,9 +27,23 @@ export class CreateTaskComponent implements OnInit {
       taskList : this.formbuilder.array([this.addTaskList()])
     });
     this.taskListForm.get('task')?.disable();
+    
     this.getPulicIP();
   }
 
+  get inputFieldControl() {
+    return this.taskListForm.get('task');
+  }
+
+  onInputKeyup() {
+    if(this.inputFieldControl?.value !== '') {
+      this.isTyping = true;
+      this.inputFieldControl?.enable();
+    } else {
+      this.isTyping = false;
+      this.inputFieldControl.disable();
+    }
+  }
   //get method to console log public ip api
   getPulicIP() {
     this.taskService.getIP()
