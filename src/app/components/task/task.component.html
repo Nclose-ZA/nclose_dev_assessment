@@ -1,0 +1,39 @@
+<div class="body">
+    <div id="logo">
+        <img src="./assets/images/nclose_logo.png">
+    </div>
+    <div class="container" fxLayout="row">
+        <form class="task-form" layout="row">
+            <div class="heading">Tasks</div>
+
+                <mat-form-field appearance="outline" class="form-field" id="task-entry-field">
+                    <input matInput placeholder="Add new task" height="63" width="500" type="text"
+                        [(ngModel)]="newTaskField" name="newTaskField" style="font-size: 18pt;">
+                </mat-form-field>
+           
+
+            <span>
+                <button class="add-button" color="button" mat-mini-fab (click)="openSuccessSnackBar()"
+                    aria-label="Add task" title="Add task before clicking this button.">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </span>
+            <div *ngFor="let task of tasks; let i = index">
+                <div>
+                    <mat-form-field appearance="outline" class="form-field">
+                        <input matInput type="text" value="{{ task }}" height="63" width="500">
+                    </mat-form-field>
+                    <span>
+                        <button mat-mini-fab class="delete-button" title="Delete task" (click)=" removeTask(i)"
+                            aria-label="Delete task">
+                            <mat-icon class="material-icons-outlined">delete</mat-icon>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div id="clear-button">
+                <button mat-raised-button type="button" title="clear all tasks" class="clear-button"
+                    (click)="removeAllTasks()">Clear tasks</button>
+            </div>
+        </form>
+    </div>

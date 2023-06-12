@@ -1,0 +1,70 @@
+
+
+.toolbar-title {
+    font-size: 42px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+.add-button {
+    background-color: #00BFD4;
+    color: #FFFFFF;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.main-heading {
+    font-size: 42px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+
+
+#logo {
+    margin-left: .5rem;
+    margin-bottom: 4rem;
+    margin-top: .8rem;
+
+}
+
+.heading {
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+.task-form {
+    margin-bottom: 30px;
+}
+
+.form-field {
+    margin-right: 10px;
+}
+
+
+.mat-form-field {
+    height: 63px;
+    width: 500px;
+
+    .mat-form-field-label,
+    .mat-input-element {
+        font-size: 18px;
+    }
+}
+
+#clear-button{
+    margin-top:30px;
+}
+#task-entry-field{
+    margin-bottom:30px;
+}
