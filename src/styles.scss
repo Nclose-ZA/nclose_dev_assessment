@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 
+
+/* You can add global styles to this file, and also import other style files */
 :root {
     --primary-color: #00BFD4;
     --secondary-color: #6c757d;
     --white-color: #FFFFFF;
     --success-color: #198754;
-    --danger-color:rgb(255, 94, 0);
+    --danger-color: rgb(255, 94, 0);
     --background-color: #424242;
 }
 
@@ -14,28 +16,28 @@ html,
 body {
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    color: var(--white-color)!important;
+    color: var(--white-color) !important;
     background-color: #424242;
 }
 
-.add-button{
+.add-button {
     background-color: var(--secondary-color) !important;
 }
 
-.delete-button{
-background-color: var(--danger-color) !important;
+.delete-button {
+    background-color: var(--danger-color) !important;
+    color:#FFFFFF;
 }
 
-.clear-button{
-background-color: var(--primary-color) !important;
-color:var(--white-color) !important;
+.clear-button {
+    background-color: var(--primary-color) !important;
+    color: var(--white-color) !important;
 
 }
 
 .success-snackbar {
     color: white;
-    --mdc-snackbar-container-color: var(--success-color)!important;
-
+    --mdc-snackbar-container-color: var(--success-color);
     .mat-simple-snackbar-action {
         color: white;
     }
@@ -52,30 +54,14 @@ color:var(--white-color) !important;
     }
 }
 
-form-field{
-    flex: auto;
-    height: 63px!important ;
-    width: 500px !important;
-   
-}
 
 .add-snackbar {
-    background-color: #3C730F!important;
+    background-color: #3C730F !important;
 }
 
 .delete-snackbar {
-    background-color: #EF4F16!important;
+    background-color: #EF4F16 !important;
 }
-
-.custom-input {
-    border-color: white !important;
-  
-}
-
-.custom-input ::ng-deep .mat-input-element::placeholder {
-    color: white !important;
-   
-} 
 
 .delete-snackbar {
     background-color: #EF4F16 !important;
@@ -84,9 +70,12 @@ form-field{
     right: 0 !important;
 }
 
-.add-snackbar {
-    background-color: #3C730F !important;
-    position: fixed !important;
-    top: 0 !important;
-    right: 0 !important;
+.snackbar-green {
+    background-color: #3C730F;
+    color: #FFFFFF;
+}
+
+.snackbar-red {
+    background-color: #EF4F16;
+    color: #FFFFFF;
 }

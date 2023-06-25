@@ -1,5 +1,3 @@
-
-
 .toolbar-title {
     font-size: 42px;
     color: #FFFFFF;
@@ -19,8 +17,6 @@
     font-size: 42px;
     font-family: 'Roboto', sans-serif;
 }
-
-
 
 .container {
     display: flex;
@@ -49,22 +45,45 @@
 
 .form-field {
     margin-right: 10px;
-}
-
-
-.mat-form-field {
-    height: 63px;
     width: 500px;
 
-    .mat-form-field-label,
-    .mat-input-element {
-        font-size: 18px;
-    }
 }
 
-#clear-button{
-    margin-top:30px;
+.mat-input-element {
+    height: 63px !important;
+
 }
-#task-entry-field{
-    margin-bottom:30px;
+
+.mat-form-field-label,
+.mat-input-element {
+    font-size: 18px;
+}
+
+#clear-button {
+    margin-top: 30px;
+}
+
+#task-entry {
+    margin-bottom: 30px;
+}
+
+
+button[disabled]{
+    background-color: #7E7E7E;
+  color:#7E7E7E;
+}
+
+.parent-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.my-custom-snackbar {
+    margin: 0 !important;
+    position: absolute;
+    right: 25px;
+    top: 60px;
 }

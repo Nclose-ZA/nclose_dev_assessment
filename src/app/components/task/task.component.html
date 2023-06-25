@@ -4,22 +4,25 @@
     </div>
     <div class="container" fxLayout="row">
         <form class="task-form" layout="row">
+
             <div class="heading">Tasks</div>
+            <div class="parent-div" id="task-entry">
 
-                <mat-form-field appearance="outline" class="form-field" id="task-entry-field">
+                <mat-form-field appearance="outline" class="form-field">
                     <input matInput placeholder="Add new task" height="63" width="500" type="text"
-                        [(ngModel)]="newTaskField" name="newTaskField" style="font-size: 18pt;">
+                        [(ngModel)]="newTaskField" name="newTaskField">
                 </mat-form-field>
-           
 
-            <span>
-                <button class="add-button" color="button" mat-mini-fab (click)="openSuccessSnackBar()"
-                    aria-label="Add task" title="Add task before clicking this button.">
-                    <mat-icon>add</mat-icon>
-                </button>
-            </span>
+                <span class="name-fab">
+                    <button [disabled]="!newTaskField" class="add-button" color="button" mat-mini-fab
+                        (click)="openSuccessSnackBar()" [title]="!newTaskField?'Add task to enable button':'Add task'">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </span>
+            </div>
             <div *ngFor="let task of tasks; let i = index">
-                <div>
+
+                <div class="parent-div">
                     <mat-form-field appearance="outline" class="form-field">
                         <input matInput type="text" value="{{ task }}" height="63" width="500">
                     </mat-form-field>

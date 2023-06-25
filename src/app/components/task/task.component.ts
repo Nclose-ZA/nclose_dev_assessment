@@ -5,18 +5,21 @@ import {  FormBuilder } from '@angular/forms';
 import { TaskService } from './task.service';
 import { SnackBarService } from 'src/app/services/snackBar.service';
 import { IipAddress } from 'src/app/models/ipModel';
+import { MatSnackBarConfig } from '@angular/material/snack-bar';
+import Swal from 'sweetalert2';
 
 
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrls: ['./task.component.css']
+  styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit{
 
   address!: any;
   tasks: string[] = [];
   newTaskField: string = '';
+ 
 
   constructor( private fb:FormBuilder,private snack:SnackBarService,private taskService:TaskService) { }
 
@@ -32,14 +35,20 @@ export class TaskComponent implements OnInit{
         next: (res: IipAddress) => {
           this.address = res.ip
           console.log(this.address) 
+          this.alertWithSuccess()
         },
         error: (err: any) => {
-          console.log('An error occured, couldnt get the ipAddress')    
+          this.alertWithError()   
         }   
   })
 }
+  alertWithSuccess() {
+    Swal.fire('Success', 'API address successfully fetched', 'success')
+  }
 
- 
+  alertWithError() {
+    Swal.fire('Error', 'An error occured. Could not fetch API address', 'error')
+  }
 
   addTask() {
     if (this.newTaskField) {
