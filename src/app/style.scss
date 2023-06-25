@@ -1,0 +1,48 @@
+// Import Angular Material theming
+@import "~@angular/material/theming";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// Define your custom theme
+$custom-primary: mat-palette($mat-teal);
+$custom-accent: mat-palette($mat-pink, A200, A100, A400);
+$custom-warn: mat-palette($mat-red);
+$custom-theme: mat-light-theme($custom-primary, $custom-accent, $custom-warn);
+
+// Override default Angular Material styles
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@include mat-core();
+@include angular-material-theme($custom-theme);
+
+// Custom styles
+body {
+    background-color: #424242;
+}
+
+button.mat-button-primary {
+    background-color: #00BFD4;
+    color: #FFFFFF;
+}
+
+.fab-add-button {
+    background-color: #00BFD4;
+    color: #FFFFFF;
+}
+
+.snackbar-green {
+    background-color: #3C730F;
+    color: #FFFFFF;
+}
+
+.snackbar-red {
+    background-color: #EF4F16;
+    color: #FFFFFF;
+}
+
+// Media queries
+@media only screen and (max-width: 1440px) {
+    // Adjust styles for desktop
+    // ...
+}
+
+// Adjust media queries for other devices
+// ...

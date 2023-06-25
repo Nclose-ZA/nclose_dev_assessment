@@ -1,0 +1,98 @@
+
+
+
+
+
+
+
+
+
+@import '~@angular/material/theming';
+
+// Define the theme colors
+$my-app-background: #424242;
+$my-app-disabled-grey: #7E7E7E;
+$my-app-white: #FFFFFF;
+$my-app-delete-red: #EF4F16;
+$my-app-button-primary: #00BFD4;
+$my-app-success-green: #3C730F;
+$my-app-failure-red: #EF4F16;
+
+// Create the Angular Material theme
+$my-app-theme: mat-light-theme($background: (
+    default: $my-app-background,
+  ),
+  $button: (
+    primary: $my-app-button-primary,
+    ),
+    $warn: (
+      default: $my-app-delete-red,
+      ),
+      $success: (
+        default: $my-app-success-green,
+        ),
+        $failure: (
+          default: $my-app-failure-red,
+          ),
+        );
+
+      // Apply the theme to your Angular Material components
+      @include mat-core();
+      @include angular-material-theme($my-app-theme);
+
+
+
+
+
+
+
+
+
+// // Import Angular Material theming
+// @import "~@angular/material/theming";
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// // Define your custom theme
+// $custom-primary: mat-palette($mat-teal);
+// $custom-accent: mat-palette($mat-pink, A200, A100, A400);
+// $custom-warn: mat-palette($mat-red);
+// $custom-theme: mat-light-theme($custom-primary, $custom-accent, $custom-warn);
+
+// // Override default Angular Material styles
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @include mat-core();
+// @include angular-material-theme($custom-theme);
+
+// // Custom styles
+// body {
+//   background-color: #424242;
+// }
+
+// button.mat-button-primary {
+//   background-color: #00BFD4;
+//   color: #FFFFFF;
+// }
+
+// .fab-add-button {
+//   background-color: #00BFD4;
+//   color: #FFFFFF;
+// }
+
+// .snackbar-green {
+//   background-color: #3C730F;
+//   color: #FFFFFF;
+// }
+
+// .snackbar-red {
+//   background-color: #EF4F16;
+//   color: #FFFFFF;
+// }
+
+// // Media queries
+// @media only screen and (max-width: 1440px) {
+//   // Adjust styles for desktop
+//   // ...
+// }
+
+// // Adjust media queries for other devices
+// // ...
